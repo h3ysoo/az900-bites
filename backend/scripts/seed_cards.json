@@ -1,0 +1,146 @@
+[
+  {
+    "module": "Cloud Concepts",
+    "topic": "Cloud computing nedir ve temel faydaları",
+    "persona": "klasik_hoca",
+    "content": "Cloud computing, sunucu, depolama ve ağ gibi bilişim kaynaklarının internet üzerinden, kullanıldığı kadar ödenerek tüketilmesidir. Donanım satın almak yerine kaynaklar bir sağlayıcıdan kiralanır. Temel faydaları ölçeklenebilirlik, maliyet esnekliği ve yüksek erişilebilirliktir.",
+    "quiz_question": "Cloud computing'in temel ödeme modeli nedir?",
+    "quiz_answer": "Kullandığın kadar öde (pay-as-you-go) modelidir."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Cloud computing nedir ve temel faydaları",
+    "persona": "analoji_ustasi",
+    "content": "Cloud computing'i elektrik şebekesi gibi düşün: evine jeneratör kurmazsın, prize takarsın ve harcadığın kadar fatura ödersin. Azure da sana sunucu ve depolamayı aynı mantıkla 'prizden' verir. Jeneratör bakımı (donanım derdi) tamamen sağlayıcıya kalır.",
+    "quiz_question": "Elektrik şebekesi benzetmesinde 'prize takmak' neye karşılık gelir?",
+    "quiz_answer": "Kaynakları satın almak yerine internet üzerinden kullanıldığı kadar ödeyerek tüketmeye karşılık gelir."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Cloud computing nedir ve temel faydaları",
+    "persona": "kisa_kesen",
+    "content": "Cloud computing = bilişim kaynaklarını internetten kiralamak. Kullandığın kadar ödersin, donanımla uğraşmazsın.",
+    "quiz_question": "Cloud computing'de donanımın bakımından kim sorumludur?",
+    "quiz_answer": "Cloud sağlayıcısı sorumludur."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Shared Responsibility Model",
+    "persona": "klasik_hoca",
+    "content": "Shared Responsibility Model, güvenlik ve yönetim sorumluluklarının cloud sağlayıcısı ile müşteri arasında paylaşılmasını tanımlar. Fiziksel veri merkezi, ağ ve donanım her zaman sağlayıcının; veri, kimlikler ve erişim yönetimi her zaman müşterinin sorumluluğundadır. Aradaki katmanların sahibi, seçilen hizmet modeline (IaaS, PaaS, SaaS) göre değişir.",
+    "quiz_question": "Shared Responsibility Model'de veri ve kimliklerin sorumluluğu kimdedir?",
+    "quiz_answer": "Her hizmet modelinde müşterinin sorumluluğundadır."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Shared Responsibility Model",
+    "persona": "analoji_ustasi",
+    "content": "Shared Responsibility Model'i kiralık daire gibi düşün: binanın deprem sağlamlığı ve çatısı ev sahibinin işi, ama kapını kilitlemek ve içerideki eşyalar senin sorumluluğun. Azure'da da veri merkezi ve donanım Microsoft'un, verilerin ve şifrelerin ise her zaman senin işin. Hizmet modeli değiştikçe (IaaS'tan SaaS'a) ev sahibinin üstlendiği işler artar.",
+    "quiz_question": "Kiralık daire benzetmesinde 'kapıyı kilitlemek' neye karşılık gelir?",
+    "quiz_answer": "Müşterinin kendi verilerini, kimliklerini ve erişimini korumasına karşılık gelir."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Shared Responsibility Model",
+    "persona": "kisa_kesen",
+    "content": "Shared Responsibility = güvenlik sorumluluğu paylaşımı. Fiziksel altyapı sağlayıcının, veri ve kimlikler daima müşterinin; arası hizmet modeline göre değişir.",
+    "quiz_question": "Fiziksel veri merkezinin güvenliği kimin sorumluluğundadır?",
+    "quiz_answer": "Her zaman cloud sağlayıcısının sorumluluğundadır."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Public, Private ve Hybrid Cloud",
+    "persona": "klasik_hoca",
+    "content": "Public cloud'da kaynaklar sağlayıcıya aittir ve internet üzerinden herkese sunulur; Azure bunun bir örneğidir. Private cloud, tek bir kuruluşa ayrılmış altyapıdır ve daha fazla kontrol sağlar. Hybrid cloud ise ikisini birleştirir; veriler ve uygulamalar iki ortam arasında paylaşılabilir.",
+    "quiz_question": "Tek bir kuruluşa ayrılmış cloud modeline ne ad verilir?",
+    "quiz_answer": "Private cloud olarak adlandırılır."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Public, Private ve Hybrid Cloud",
+    "persona": "analoji_ustasi",
+    "content": "Public cloud otobüs gibidir: herkes aynı aracı paylaşır, ucuzdur ve bakımı sana kalmaz. Private cloud kendi araban: pahalı ama tamamen senin kontrolünde. Hybrid ise ikisini birden kullanmak — hafta içi otobüs, hassas yükler için kendi araban.",
+    "quiz_question": "Otobüs-araba benzetmesinde hybrid cloud neye karşılık gelir?",
+    "quiz_answer": "İhtiyaca göre public ve private cloud'un birlikte kullanılmasına karşılık gelir."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Public, Private ve Hybrid Cloud",
+    "persona": "kisa_kesen",
+    "content": "Public = paylaşımlı, sağlayıcının altyapısı. Private = tek kuruluşa özel. Hybrid = ikisinin birleşimi.",
+    "quiz_question": "Azure hangi cloud dağıtım modelinin örneğidir?",
+    "quiz_answer": "Public cloud örneğidir."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "IaaS, PaaS ve SaaS",
+    "persona": "klasik_hoca",
+    "content": "IaaS (Infrastructure as a Service) sanal makine ve ağ gibi ham altyapıyı kiralamaktır; işletim sisteminden itibaren yönetim müşterinindir. PaaS (Platform as a Service) uygulama geliştirmek için hazır platform sunar; altyapı ve işletim sistemi sağlayıcıya aittir. SaaS (Software as a Service) ise doğrudan kullanılan hazır yazılımdır, örneğin Microsoft 365.",
+    "quiz_question": "Microsoft 365 hangi hizmet modelinin örneğidir?",
+    "quiz_answer": "SaaS (Software as a Service) örneğidir."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "IaaS, PaaS ve SaaS",
+    "persona": "analoji_ustasi",
+    "content": "Pizza benzetmesiyle düşün: IaaS mutfak kiralamak gibi — malzemeyi getirip pizzayı kendin yaparsın. PaaS hazır hamur ve fırın verilen bir tezgah — sadece malzemeleri dizersin. SaaS ise restoranda pizza söylemek — her şey hazır gelir, sen sadece yersin.",
+    "quiz_question": "Pizza benzetmesinde 'restoranda hazır pizza yemek' hangi modele karşılık gelir?",
+    "quiz_answer": "SaaS modeline karşılık gelir."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "IaaS, PaaS ve SaaS",
+    "persona": "kisa_kesen",
+    "content": "IaaS = ham altyapı (VM, ağ). PaaS = hazır geliştirme platformu. SaaS = kullanıma hazır yazılım.",
+    "quiz_question": "Sanal makine kiralamak hangi hizmet modelidir?",
+    "quiz_answer": "IaaS modelidir."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "High Availability ve Scalability",
+    "persona": "klasik_hoca",
+    "content": "High Availability, bir hizmetin arızalara rağmen kesintisiz çalışmaya devam etme yeteneğidir ve genellikle yüzde cinsinden uptime ile ölçülür. Scalability ise artan talebe göre kaynakların büyütülebilmesidir. Dikey ölçekleme (scale up) makineyi güçlendirmek, yatay ölçekleme (scale out) makine sayısını artırmaktır.",
+    "quiz_question": "Makine sayısını artırarak ölçeklemeye ne ad verilir?",
+    "quiz_answer": "Yatay ölçekleme (scale out) olarak adlandırılır."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "High Availability ve Scalability",
+    "persona": "analoji_ustasi",
+    "content": "Bir kafeteryayı düşün: yoğunlukta ikinci kasayı açmak scale out, kasiyere daha hızlı bir kasa vermek scale up. High Availability ise kafenin tek kasiyer hastalansa bile kapanmaması — yedek personel her zaman hazır. Azure'da bu yedeklilik, hizmetin kesintisiz kalmasını sağlar.",
+    "quiz_question": "Kafeterya benzetmesinde 'ikinci kasayı açmak' neye karşılık gelir?",
+    "quiz_answer": "Yatay ölçeklemeye (scale out) karşılık gelir."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "High Availability ve Scalability",
+    "persona": "kisa_kesen",
+    "content": "High Availability = kesintisiz hizmet, uptime yüzdesiyle ölçülür. Scale up = makineyi güçlendir; scale out = makine ekle.",
+    "quiz_question": "High Availability genellikle nasıl ölçülür?",
+    "quiz_answer": "Uptime yüzdesiyle (örneğin %99,9) ölçülür."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Region ve Availability Zone",
+    "persona": "klasik_hoca",
+    "content": "Region, Azure'un dünyanın belirli bir coğrafyasında bulunan veri merkezleri kümesidir. Availability Zone ise bir Region içinde bağımsız güç, soğutma ve ağa sahip, fiziksel olarak ayrık bir veya daha fazla veri merkezidir. Uygulamayı birden fazla zone'a dağıtmak, tek bir veri merkezi arızasına karşı koruma sağlar.",
+    "quiz_question": "Bir Region içindeki bağımsız veri merkezi gruplarına ne ad verilir?",
+    "quiz_answer": "Availability Zone olarak adlandırılır."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Region ve Availability Zone",
+    "persona": "analoji_ustasi",
+    "content": "Region'ı bir bankanın İstanbul'daki tüm şubeleri gibi düşün; Availability Zone ise şehrin farklı semtlerindeki tek tek şubeler. Bir semtte elektrik kesilse diğer şubeler çalışmaya devam eder. Verini birden fazla 'şubeye' koyarsan tek bir arıza seni durduramaz.",
+    "quiz_question": "Banka şubesi benzetmesinde bir semtteki elektrik kesintisi neyi temsil eder?",
+    "quiz_answer": "Tek bir Availability Zone'un (veri merkezinin) arızalanmasını temsil eder."
+  },
+  {
+    "module": "Cloud Concepts",
+    "topic": "Region ve Availability Zone",
+    "persona": "kisa_kesen",
+    "content": "Region = bir coğrafyadaki veri merkezleri kümesi. Availability Zone = Region içindeki bağımsız, ayrık veri merkezi. Çoklu zone = arızaya dayanıklılık.",
+    "quiz_question": "Uygulamayı neden birden fazla Availability Zone'a dağıtırız?",
+    "quiz_answer": "Tek bir veri merkezi arızasında hizmetin kesintisiz devam etmesi için."
+  }
+]
