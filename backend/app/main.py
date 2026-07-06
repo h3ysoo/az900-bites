@@ -23,6 +23,14 @@ def startup() -> None:
     init_db()
 
 
+@app.get("/")
+def root() -> dict:
+    return {
+        "app": "AZ-900 Bites API",
+        "endpoints": ["/health", "/modules", "/cards?module=&persona=", "/docs"],
+    }
+
+
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok"}
