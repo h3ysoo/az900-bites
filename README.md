@@ -1,19 +1,20 @@
 # AZ-900 Bites
 
-Microsoft AZ-900 (Azure Fundamentals) sınavına hazırlananlar için "reels" tarzı
-mikro-öğrenme uygulaması. Bir modül seçersin, kısa bilgi kartları dikey swipe
-ile arka arkaya gelir. Her kart tek bir kavramı 2-3 cümlede, farklı anlatıcı
-personalarıyla anlatır ve altında mini bir quiz taşır.
+A reels-style micro-learning app for people preparing for the Microsoft
+AZ-900 (Azure Fundamentals) exam. Pick a module and short knowledge cards
+arrive one after another with vertical swipes. Each card explains a single
+concept in 2-3 sentences, narrated by different personas, and carries a
+mini quiz underneath.
 
-## Mimari
+## Architecture
 
-- **frontend/** — Expo (React Native + TypeScript). Telefonda Expo Go ile çalışır.
-- **backend/** — FastAPI + SQLite. Kartları `GET /cards` ile sunar.
-- **backend/prompts/** — Persona sistem promptları (`klasik_hoca`, `analoji_ustasi`,
-  `kisa_kesen`). Yeni bir `.md` dosyası eklemek yeni persona eklemek demektir.
-- **backend/scripts/generate_cards.py** — Claude (Anthropic API) ile kart üretir.
+- **frontend/** — Expo (React Native + TypeScript). Runs on your phone with Expo Go.
+- **backend/** — FastAPI + SQLite. Serves the cards via `GET /cards`.
+- **backend/prompts/** — Persona system prompts (`klasik_hoca`, `analoji_ustasi`,
+  `kisa_kesen`). Adding a new `.md` file there means adding a new persona.
+- **backend/scripts/generate_cards.py** — Generates cards with Claude (Anthropic API).
 
-## Kurulum
+## Setup
 
 ### Backend
 
@@ -23,13 +24,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-# Kartları üret (Anthropic API anahtarıyla):
+# Generate cards (with an Anthropic API key):
 #   echo "ANTHROPIC_API_KEY=sk-..." > .env
 python -m scripts.generate_cards
-# veya API anahtarı olmadan hazır tohum kartlarla:
+# or without an API key, using the bundled seed cards:
 python -m scripts.generate_cards --offline
 
-# API'yi başlat (telefonun erişebilmesi için 0.0.0.0):
+# Start the API (0.0.0.0 so your phone can reach it):
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
@@ -41,24 +42,25 @@ npm install
 npm start
 ```
 
-Telefonda **Expo Go** ile QR kodu okut. Telefonun ve bilgisayarın aynı Wi-Fi'da
-olması gerekir; frontend, API adresini Expo'nun dev sunucu IP'sinden otomatik
-türetir.
+Scan the QR code with **Expo Go** on your phone. The phone and the computer
+must be on the same Wi-Fi; the frontend derives the API address automatically
+from the Expo dev server IP.
 
 ## API
 
-- `GET /health` — sağlık kontrolü
-- `GET /modules` — modüller ve kart sayıları
-- `GET /cards?module=Cloud%20Concepts&persona=analoji_ustasi` — kart listesi
-  (iki filtre de opsiyonel)
+- `GET /health` — health check
+- `GET /modules` — modules and their card counts
+- `GET /cards?module=Cloud%20Concepts&persona=analoji_ustasi` — list cards
+  (both filters are optional)
 
-## Veri modeli
+## Data model
 
 `cards`: id, module, topic, persona, content, quiz_question, quiz_answer,
-`audio_url` (Seviye 2 TTS entegrasyonu için rezerve, şimdilik boş), created_at.
+`audio_url` (reserved for the Level 2 TTS integration, empty for now),
+created_at.
 
-## Yol haritası
+## Roadmap
 
-- [x] MVP: Cloud Concepts kartları + dikey swipe + quiz
-- [ ] Diğer modüller (Architecture & Management, Pricing & Support)
-- [ ] Seviye 2: TTS ile sesli kartlar (`audio_url`)
+- [x] MVP: Cloud Concepts cards + vertical swipe + quiz
+- [ ] Remaining modules (Architecture & Management, Pricing & Support)
+- [ ] Level 2: audio cards via TTS (`audio_url`)
