@@ -142,5 +142,197 @@
     "content": "Region = bir coğrafyadaki veri merkezleri kümesi. Availability Zone = Region içindeki bağımsız, ayrık veri merkezi. Çoklu zone = arızaya dayanıklılık.",
     "quiz_question": "Uygulamayı neden birden fazla Availability Zone'a dağıtırız?",
     "quiz_answer": "Tek bir veri merkezi arızasında hizmetin kesintisiz devam etmesi için."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Resource, Resource Group ve Subscription hiyerarşisi",
+    "persona": "klasik_hoca",
+    "content": "Azure'da Resource, VM veya veritabanı gibi yönetilen her bir varlıktır. Resource Group, ilgili resource'ları bir arada tutan mantıksal kapsayıcıdır; bir resource yalnızca bir Resource Group'a ait olabilir. Subscription ise faturalama ve erişim sınırı çizen üst seviye birimdir ve birden çok Resource Group içerir.",
+    "quiz_question": "Bir resource aynı anda kaç Resource Group'a ait olabilir?",
+    "quiz_answer": "Yalnızca bir Resource Group'a ait olabilir."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Resource, Resource Group ve Subscription hiyerarşisi",
+    "persona": "analoji_ustasi",
+    "content": "Bir apartman düşün: daireler Resource'lar, katlar Resource Group'lar, apartmanın tamamı ise Subscription. Her daire tek bir katta bulunur, faturalar ise apartman yönetimine (Subscription) kesilir. Bir katı boşaltırsan (Resource Group silme) içindeki tüm daireler de gider.",
+    "quiz_question": "Apartman benzetmesinde faturaların kesildiği yer neresidir?",
+    "quiz_answer": "Subscription'dır; faturalama Subscription seviyesinde yapılır."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Resource, Resource Group ve Subscription hiyerarşisi",
+    "persona": "kisa_kesen",
+    "content": "Resource = tek varlık. Resource Group = mantıksal kapsayıcı (silersen içindekiler de gider). Subscription = faturalama sınırı.",
+    "quiz_question": "Resource Group silinince içindeki resource'lara ne olur?",
+    "quiz_answer": "İçindeki tüm resource'lar da silinir."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Azure compute: VM, App Service ve Functions",
+    "persona": "klasik_hoca",
+    "content": "Virtual Machine, işletim sistemi dahil tam kontrol sunan IaaS compute hizmetidir. App Service, web uygulamalarını altyapı yönetmeden barındıran bir PaaS hizmetidir. Azure Functions ise yalnızca kod çalıştığı anda ücretlendirilen, olay tetiklemeli serverless hizmettir.",
+    "quiz_question": "Olay tetiklemeli, serverless compute hizmeti hangisidir?",
+    "quiz_answer": "Azure Functions'tır."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Azure compute: VM, App Service ve Functions",
+    "persona": "analoji_ustasi",
+    "content": "VM ev satın almak gibi: her şey senin, tamiri de senin. App Service otel odası: sen sadece yaşarsın, temizlik ve bakım otelin işi. Functions ise taksi: sadece bindiğin (kodun çalıştığı) süre için ödersin, araç park halindeyken para gitmez.",
+    "quiz_question": "Taksi benzetmesi hangi compute hizmetini anlatır?",
+    "quiz_answer": "Azure Functions'ı; yalnızca kod çalışırken ödeme yapılır."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Azure compute: VM, App Service ve Functions",
+    "persona": "kisa_kesen",
+    "content": "VM = tam kontrol (IaaS). App Service = web uygulaması barındırma (PaaS). Functions = olay tetiklemeli, çalıştığı kadar öde (serverless).",
+    "quiz_question": "İşletim sistemi üzerinde tam kontrol veren compute hizmeti hangisidir?",
+    "quiz_answer": "Virtual Machine'dir."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Azure Storage servisleri",
+    "persona": "klasik_hoca",
+    "content": "Azure Blob Storage, resim ve video gibi yapılandırılmamış nesneleri saklar. Azure Files, SMB protokolüyle erişilen paylaşımlı dosya sistemleri sunar. Erişim sıklığına göre Hot, Cool ve Archive katmanları maliyet optimizasyonu sağlar.",
+    "quiz_question": "Yapılandırılmamış nesneler (resim, video) için hangi storage hizmeti kullanılır?",
+    "quiz_answer": "Azure Blob Storage kullanılır."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Azure Storage servisleri",
+    "persona": "analoji_ustasi",
+    "content": "Storage katmanlarını dolabına benzet: Hot, her gün giydiğin kıyafetlerin olduğu ön raf; Cool, mevsimlik kıyafetlerin olduğu üst raf; Archive ise bodrumdaki bavul — ucuz ama ulaşması saatler alır. Azure'da veriye ne sıklıkla dokunduğun hangi rafa koyacağını belirler.",
+    "quiz_question": "Bodrumdaki bavul benzetmesi hangi erişim katmanını anlatır?",
+    "quiz_answer": "Archive katmanını; en ucuzdur ama erişim saatler sürebilir."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Azure Storage servisleri",
+    "persona": "kisa_kesen",
+    "content": "Blob = nesne depolama. Files = SMB dosya paylaşımı. Katmanlar: Hot (sık erişim) > Cool > Archive (en ucuz, en yavaş).",
+    "quiz_question": "En düşük maliyetli storage erişim katmanı hangisidir?",
+    "quiz_answer": "Archive katmanıdır."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Microsoft Entra ID ve kimlik yönetimi",
+    "persona": "klasik_hoca",
+    "content": "Microsoft Entra ID (eski adıyla Azure Active Directory), Azure'un bulut tabanlı kimlik ve erişim yönetimi hizmetidir. Kullanıcıların tek bir kimlikle birçok uygulamaya erişmesini (single sign-on) sağlar. Multi-Factor Authentication ile parolaya ek bir doğrulama katmanı ekler.",
+    "quiz_question": "Microsoft Entra ID'nin eski adı nedir?",
+    "quiz_answer": "Azure Active Directory'dir."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Microsoft Entra ID ve kimlik yönetimi",
+    "persona": "analoji_ustasi",
+    "content": "Entra ID'yi bir sitenin güvenlik kulübesi gibi düşün: içeri girecek herkesin kimliğini tek noktadan kontrol eder, tanıdıklarına tüm bloklara geçiş kartı verir (single sign-on). MFA ise kimlik kartına ek olarak telefonuna gelen kodu sorması — kartın çalınsa bile içeri girilemez.",
+    "quiz_question": "Güvenlik kulübesi benzetmesinde 'tüm bloklara geçiş kartı' neyi anlatır?",
+    "quiz_answer": "Single sign-on'u; tek kimlikle birçok uygulamaya erişmeyi anlatır."
+  },
+  {
+    "module": "Architecture & Management",
+    "topic": "Microsoft Entra ID ve kimlik yönetimi",
+    "persona": "kisa_kesen",
+    "content": "Entra ID = bulut kimlik yönetimi (eski adı Azure AD). SSO = tek kimlik, çok uygulama. MFA = parola + ikinci doğrulama.",
+    "quiz_question": "Parolaya ek doğrulama katmanı ekleyen özellik nedir?",
+    "quiz_answer": "Multi-Factor Authentication (MFA)."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "Pricing Calculator ve TCO Calculator",
+    "persona": "klasik_hoca",
+    "content": "Pricing Calculator, planlanan Azure hizmetlerinin aylık maliyetini önceden tahmin etmeye yarar. TCO (Total Cost of Ownership) Calculator ise mevcut on-premises altyapıyı Azure'a taşımanın toplam sahip olma maliyetini karşılaştırır. İkisi de ücretsizdir ve satın alma öncesi planlama araçlarıdır.",
+    "quiz_question": "On-premises altyapıyı Azure'a taşımanın maliyetini karşılaştıran araç hangisidir?",
+    "quiz_answer": "TCO (Total Cost of Ownership) Calculator'dır."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "Pricing Calculator ve TCO Calculator",
+    "persona": "analoji_ustasi",
+    "content": "Pricing Calculator, market alışverişinden önce sepeti web sitesinde doldurup tutarı görmek gibi — daha ödeme yapmadan faturayı bilirsin. TCO Calculator ise 'evde yemek mi, dışarıda yemek mi daha ekonomik?' hesabı: kendi sunucu odanla (on-premises) Azure'u kıyaslar.",
+    "quiz_question": "Market sepeti benzetmesi hangi aracı anlatır?",
+    "quiz_answer": "Pricing Calculator'ı; hizmetlerin aylık maliyetini önceden tahmin eder."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "Pricing Calculator ve TCO Calculator",
+    "persona": "kisa_kesen",
+    "content": "Pricing Calculator = planlanan hizmetlerin aylık maliyet tahmini. TCO Calculator = on-premises vs Azure toplam maliyet kıyası.",
+    "quiz_question": "Azure hizmetlerinin aylık maliyetini tahmin eden araç nedir?",
+    "quiz_answer": "Pricing Calculator'dır."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "Maliyeti etkileyen faktörler ve Cost Management",
+    "persona": "klasik_hoca",
+    "content": "Azure maliyetini resource tipi, tüketim miktarı, seçilen Region ve ağ trafiği (özellikle dışa giden veri) etkiler. Microsoft Cost Management aracı, harcamaları izlemeye, bütçe oluşturmaya ve maliyet uyarıları kurmaya yarar. Kullanılmayan kaynakları kapatmak en temel tasarruf yöntemidir.",
+    "quiz_question": "Azure'da harcama izleme ve bütçe uyarıları için hangi araç kullanılır?",
+    "quiz_answer": "Microsoft Cost Management kullanılır."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "Maliyeti etkileyen faktörler ve Cost Management",
+    "persona": "analoji_ustasi",
+    "content": "Azure faturası elektrik faturası gibidir: klimayı (VM) açık unutursan sayaç döner. Cost Management ise akıllı sayaç uygulaması — anlık tüketimi gösterir, limit aşılınca telefonuna bildirim atar. Region seçimi de şehirden şehre değişen elektrik tarifesi gibi düşünülebilir.",
+    "quiz_question": "Elektrik faturası benzetmesinde 'klimayı açık unutmak' neye karşılık gelir?",
+    "quiz_answer": "Kullanılmayan kaynakları çalışır bırakmaya karşılık gelir; maliyet boşuna artar."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "Maliyeti etkileyen faktörler ve Cost Management",
+    "persona": "kisa_kesen",
+    "content": "Maliyeti etkiler: resource tipi, tüketim, Region, dışa giden trafik. Cost Management = izleme + bütçe + uyarı.",
+    "quiz_question": "Azure'da maliyeti etkileyen faktörlerden iki tanesini say.",
+    "quiz_answer": "Resource tipi ve seçilen Region (ayrıca tüketim miktarı ve dışa giden trafik)."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "SLA (Service Level Agreement)",
+    "persona": "klasik_hoca",
+    "content": "SLA, Microsoft'un bir hizmet için taahhüt ettiği çalışma süresi (uptime) yüzdesini tanımlayan resmi sözleşmedir; örneğin %99,9. Taahhüt karşılanmazsa müşteri hizmet kredisi alabilir. Birden çok hizmet birlikte kullanıldığında bileşik SLA, tek tek SLA'lerin çarpımıyla düşer.",
+    "quiz_question": "SLA taahhüdü karşılanmazsa müşteri ne alır?",
+    "quiz_answer": "Hizmet kredisi (service credit) alır."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "SLA (Service Level Agreement)",
+    "persona": "analoji_ustasi",
+    "content": "SLA'yi kargo firmasının 'ertesi gün teslim' sözü gibi düşün: geç kalırsa ücret iadesi alırsın. Azure da '%99,9 açık kalacağım' der, sözünü tutamazsa hizmet kredisi öder. İki kargo firmasını zincirleme kullanırsan gecikme riski artar — bileşik SLA'nin düşmesi de aynen böyledir.",
+    "quiz_question": "Zincirleme kargo benzetmesi hangi kavramı anlatır?",
+    "quiz_answer": "Bileşik SLA'yi; birden çok hizmet birlikte kullanılınca toplam uptime taahhüdü düşer."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "SLA (Service Level Agreement)",
+    "persona": "kisa_kesen",
+    "content": "SLA = uptime taahhüdü (ör. %99,9). Tutulmazsa hizmet kredisi. Çoklu hizmet = bileşik SLA düşer.",
+    "quiz_question": "SLA neyi taahhüt eder?",
+    "quiz_answer": "Hizmetin çalışma süresi (uptime) yüzdesini taahhüt eder."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "Azure destek planları",
+    "persona": "klasik_hoca",
+    "content": "Azure destek planları Basic, Developer, Standard ve Professional Direct olarak sıralanır. Basic tüm müşterilere ücretsizdir ve faturalama desteği içerir; teknik destek Developer ve üzeri planlarla gelir. Yanıt süreleri ve kapsam, plan seviyesi yükseldikçe artar.",
+    "quiz_question": "Teknik destek en düşük hangi planla birlikte gelir?",
+    "quiz_answer": "Developer planıyla gelir; Basic yalnızca faturalama desteği içerir."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "Azure destek planları",
+    "persona": "analoji_ustasi",
+    "content": "Destek planlarını uçak bileti sınıfları gibi düşün: Basic ekonomi — herkese dahil ama servis sınırlı. Developer, yemek servisi olan ekonomi; Standard business class — sorunlara daha hızlı yanıt. Professional Direct ise first class: özel ilgi ve en kısa bekleme süresi.",
+    "quiz_question": "Uçak sınıfı benzetmesinde 'first class' hangi destek planıdır?",
+    "quiz_answer": "Professional Direct planıdır."
+  },
+  {
+    "module": "Pricing & Support",
+    "topic": "Azure destek planları",
+    "persona": "kisa_kesen",
+    "content": "Planlar: Basic (ücretsiz, faturalama) < Developer < Standard < Professional Direct. Plan yükseldikçe yanıt hızlanır.",
+    "quiz_question": "Tüm Azure müşterilerine ücretsiz sunulan destek planı hangisidir?",
+    "quiz_answer": "Basic plandır."
   }
 ]

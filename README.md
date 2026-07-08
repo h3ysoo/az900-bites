@@ -62,5 +62,5 @@ created_at.
 ## Roadmap
 
 - [x] MVP: Cloud Concepts cards + vertical swipe + quiz
-- [ ] Remaining modules (Architecture & Management, Pricing & Support)
+- [x] Remaining modules (Architecture & Management, Pricing & Support)
 - [ ] Level 2: audio cards via TTS (`audio_url`)

@@ -23,15 +23,28 @@ from app.db import get_connection, init_db  # noqa: E402
 PROMPTS_DIR = BACKEND_DIR / "prompts"
 SEED_PATH = Path(__file__).resolve().parent / "seed_cards.json"
 
-MODULE = "Cloud Concepts"
-TOPICS = [
-    "Cloud computing nedir ve temel faydaları",
-    "Shared Responsibility Model",
-    "Public, Private ve Hybrid Cloud",
-    "IaaS, PaaS ve SaaS",
-    "High Availability ve Scalability",
-    "Region ve Availability Zone",
-]
+MODULES = {
+    "Cloud Concepts": [
+        "Cloud computing nedir ve temel faydaları",
+        "Shared Responsibility Model",
+        "Public, Private ve Hybrid Cloud",
+        "IaaS, PaaS ve SaaS",
+        "High Availability ve Scalability",
+        "Region ve Availability Zone",
+    ],
+    "Architecture & Management": [
+        "Resource, Resource Group ve Subscription hiyerarşisi",
+        "Azure compute: VM, App Service ve Functions",
+        "Azure Storage servisleri",
+        "Microsoft Entra ID ve kimlik yönetimi",
+    ],
+    "Pricing & Support": [
+        "Pricing Calculator ve TCO Calculator",
+        "Maliyeti etkileyen faktörler ve Cost Management",
+        "SLA (Service Level Agreement)",
+        "Azure destek planları",
+    ],
+}
 
 USER_PROMPT_TEMPLATE = """Konu: {topic} (AZ-900 modülü: {module})
 
@@ -54,7 +67,7 @@ def load_personas() -> dict:
     return personas
 
 
-def generate_with_api(personas: dict) -> list:
+def generate_with_api(personas: dict, modules: dict) -> list:
     from anthropic import Anthropic
     from dotenv import load_dotenv
 
@@ -66,36 +79,37 @@ def generate_with_api(personas: dict) -> list:
 
     client = Anthropic()
     cards = []
-    for topic in TOPICS:
-        for persona, system_prompt in personas.items():
-            print(f"  generating: {topic} / {persona}")
-            message = client.messages.create(
-                model="claude-sonnet-5",
-                max_tokens=500,
-                system=system_prompt,
-                messages=[
+    for module, topics in modules.items():
+        for topic in topics:
+            for persona, system_prompt in personas.items():
+                print(f"  generating: {module} / {topic} / {persona}")
+                message = client.messages.create(
+                    model="claude-sonnet-5",
+                    max_tokens=500,
+                    system=system_prompt,
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": USER_PROMPT_TEMPLATE.format(
+                                topic=topic, module=module
+                            ),
+                        }
+                    ],
+                )
+                raw = message.content[0].text.strip()
+                if raw.startswith("```"):
+                    raw = raw.strip("`").removeprefix("json").strip()
+                data = json.loads(raw)
+                cards.append(
                     {
-                        "role": "user",
-                        "content": USER_PROMPT_TEMPLATE.format(
-                            topic=topic, module=MODULE
-                        ),
+                        "module": module,
+                        "topic": topic,
+                        "persona": persona,
+                        "content": data["content"],
+                        "quiz_question": data["quiz_question"],
+                        "quiz_answer": data["quiz_answer"],
                     }
-                ],
-            )
-            raw = message.content[0].text.strip()
-            if raw.startswith("```"):
-                raw = raw.strip("`").removeprefix("json").strip()
-            data = json.loads(raw)
-            cards.append(
-                {
-                    "module": MODULE,
-                    "topic": topic,
-                    "persona": persona,
-                    "content": data["content"],
-                    "quiz_question": data["quiz_question"],
-                    "quiz_answer": data["quiz_answer"],
-                }
-            )
+                )
     return cards
 
 
@@ -107,7 +121,8 @@ def save_cards(cards: list, reset: bool) -> None:
     init_db()
     with get_connection() as conn:
         if reset:
-            conn.execute("DELETE FROM cards WHERE module = ?", (MODULE,))
+            for module in {card["module"] for card in cards}:
+                conn.execute("DELETE FROM cards WHERE module = ?", (module,))
         conn.executemany(
             """INSERT INTO cards
                (module, topic, persona, content, quiz_question, quiz_answer)
@@ -122,16 +137,21 @@ def main() -> None:
     parser.add_argument("--offline", action="store_true",
                         help="load seed_cards.json instead of calling the API")
     parser.add_argument("--reset", action="store_true",
-                        help="delete existing cards for the module first")
+                        help="delete existing cards for the affected modules first")
+    parser.add_argument("--module", choices=sorted(MODULES),
+                        help="only generate cards for this module")
     args = parser.parse_args()
 
+    modules = {args.module: MODULES[args.module]} if args.module else MODULES
+
     if args.offline:
-        cards = load_offline_seed()
+        cards = [c for c in load_offline_seed() if c["module"] in modules]
     else:
-        cards = generate_with_api(load_personas())
+        cards = generate_with_api(load_personas(), modules)
 
     save_cards(cards, reset=args.reset)
-    print(f"Saved {len(cards)} cards for module '{MODULE}'.")
+    counts = sorted({c["module"] for c in cards})
+    print(f"Saved {len(cards)} cards for: {', '.join(counts)}.")
 
 
 if __name__ == "__main__":
