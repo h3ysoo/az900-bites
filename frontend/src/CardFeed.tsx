@@ -8,13 +8,8 @@ import {
   ViewToken,
 } from 'react-native';
 import { Card } from './api';
+import { PERSONA_LABELS } from './personas';
 import QuizModal from './QuizModal';
-
-const PERSONA_LABELS: Record<string, string> = {
-  klasik_hoca: '👨‍🏫 Klasik Hoca',
-  analoji_ustasi: '💡 Analoji Ustası',
-  kisa_kesen: '⚡ Kısa Kesen',
-};
 
 interface Props {
   cards: Card[];

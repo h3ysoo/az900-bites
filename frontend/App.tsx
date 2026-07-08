@@ -11,6 +11,7 @@ import {
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import CardFeed from './src/CardFeed';
 import { Card, fetchCards } from './src/api';
+import { PERSONAS, PERSONA_LABELS } from './src/personas';
 
 const MODULES = [
   'Cloud Concepts',
@@ -21,6 +22,7 @@ const MODULES = [
 function Main() {
   const insets = useSafeAreaInsets();
   const [module, setModule] = useState(MODULES[0]);
+  const [persona, setPersona] = useState<string | null>(null);
   const [cards, setCards] = useState<Card[]>([]);
   const [seen, setSeen] = useState<Set<number>>(new Set());
   const [loading, setLoading] = useState(true);
@@ -32,7 +34,7 @@ function Main() {
     setError(null);
     setCards([]);
     setSeen(new Set());
-    fetchCards(module)
+    fetchCards(module, persona ?? undefined)
       .then((data) => {
         setCards(data);
         // The first card is on screen immediately; viewability on web can
@@ -41,7 +43,7 @@ function Main() {
       })
       .catch((e) => setError(String(e)))
       .finally(() => setLoading(false));
-  }, [module]);
+  }, [module, persona]);
 
   const onSeen = useCallback((cardId: number) => {
     setSeen((prev) => {
@@ -70,6 +72,26 @@ function Main() {
           >
             <Text style={[styles.chipText, module === m && styles.chipTextActive]}>
               {m}
+            </Text>
+          </Pressable>
+        ))}
+      </ScrollView>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.personaRow}
+        contentContainerStyle={styles.chipRowContent}
+      >
+        {[null, ...PERSONAS].map((p) => (
+          <Pressable
+            key={p ?? 'all'}
+            onPress={() => setPersona(p)}
+            style={[styles.personaChip, persona === p && styles.personaChipActive]}
+          >
+            <Text
+              style={[styles.chipText, persona === p && styles.chipTextActive]}
+            >
+              {p ? PERSONA_LABELS[p] : 'Hepsi'}
             </Text>
           </Pressable>
         ))}
@@ -142,6 +164,14 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   chipActive: { backgroundColor: '#0ea5e9', borderColor: '#0ea5e9' },
+  personaRow: { flexGrow: 0, marginTop: 8 },
+  personaChip: {
+    borderRadius: 999,
+    backgroundColor: '#1e293b',
+    paddingHorizontal: 14,
+    paddingVertical: 6,
+  },
+  personaChipActive: { backgroundColor: '#38bdf8' },
   chipText: { color: '#94a3b8', fontSize: 14, fontWeight: '600' },
   chipTextActive: { color: '#fff' },
   progressRow: {
