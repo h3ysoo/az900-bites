@@ -12,6 +12,7 @@ import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-cont
 import CardFeed from './src/CardFeed';
 import { Card, fetchCards } from './src/api';
 import { PERSONAS, PERSONA_LABELS } from './src/personas';
+import { loadSeen, saveSeen } from './src/progress';
 
 const MODULES = [
   'Cloud Concepts',
@@ -31,20 +32,31 @@ function Main() {
   const [feedHeight, setFeedHeight] = useState(0);
 
   useEffect(() => {
+    let cancelled = false;
     setLoading(true);
     setError(null);
     setCards([]);
     setSeen(new Set());
     setScore({ correct: 0, wrong: 0 });
-    fetchCards(module, persona ?? undefined)
-      .then((data) => {
+    Promise.all([fetchCards(module, persona ?? undefined), loadSeen(module)])
+      .then(([data, stored]) => {
+        if (cancelled) return;
         setCards(data);
         // The first card is on screen immediately; viewability on web can
         // fire late, so count it as seen right away.
-        if (data.length > 0) setSeen(new Set([data[0].id]));
+        if (data.length > 0) stored.add(data[0].id);
+        setSeen(stored);
+        saveSeen(module, stored);
       })
-      .catch((e) => setError(String(e)))
-      .finally(() => setLoading(false));
+      .catch((e) => {
+        if (!cancelled) setError(String(e));
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [module, persona]);
 
   const onQuizAnswer = useCallback((correct: boolean) => {
@@ -54,14 +66,22 @@ function Main() {
     }));
   }, []);
 
-  const onSeen = useCallback((cardId: number) => {
-    setSeen((prev) => {
-      if (prev.has(cardId)) return prev;
-      const next = new Set(prev);
-      next.add(cardId);
-      return next;
-    });
-  }, []);
+  const onSeen = useCallback(
+    (cardId: number) => {
+      setSeen((prev) => {
+        if (prev.has(cardId)) return prev;
+        const next = new Set(prev);
+        next.add(cardId);
+        saveSeen(module, next);
+        return next;
+      });
+    },
+    [module]
+  );
+
+  // The stored set covers the whole module; only count cards in the
+  // currently filtered list.
+  const seenCount = cards.filter((c) => seen.has(c.id)).length;
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -111,12 +131,12 @@ function Main() {
             <View
               style={[
                 styles.progressFill,
-                { width: `${(seen.size / cards.length) * 100}%` },
+                { width: `${(seenCount / cards.length) * 100}%` },
               ]}
             />
           </View>
           <Text style={styles.progressText}>
-            {seen.size}/{cards.length}
+            {seenCount}/{cards.length}
           </Text>
           {score.correct + score.wrong > 0 && (
             <Text style={styles.scoreText}>
