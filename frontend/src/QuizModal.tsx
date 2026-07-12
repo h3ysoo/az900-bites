@@ -6,6 +6,7 @@ interface Props {
   card: Card;
   distractors: string[];
   onClose: () => void;
+  onAnswer: (correct: boolean) => void;
 }
 
 function shuffle<T>(items: T[]): T[] {
@@ -17,7 +18,7 @@ function shuffle<T>(items: T[]): T[] {
   return arr;
 }
 
-export default function QuizModal({ card, distractors, onClose }: Props) {
+export default function QuizModal({ card, distractors, onClose, onAnswer }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const options = useMemo(
     () => shuffle([card.quiz_answer, ...distractors.slice(0, 2)]),
@@ -37,7 +38,10 @@ export default function QuizModal({ card, distractors, onClose }: Props) {
               <Pressable
                 key={option}
                 disabled={selected !== null}
-                onPress={() => setSelected(option)}
+                onPress={() => {
+                  setSelected(option);
+                  onAnswer(option === card.quiz_answer);
+                }}
                 style={[
                   styles.option,
                   showState &&

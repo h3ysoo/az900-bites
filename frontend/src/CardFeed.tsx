@@ -15,9 +15,10 @@ interface Props {
   cards: Card[];
   height: number;
   onSeen: (cardId: number) => void;
+  onQuizAnswer: (correct: boolean) => void;
 }
 
-export default function CardFeed({ cards, height, onSeen }: Props) {
+export default function CardFeed({ cards, height, onSeen, onQuizAnswer }: Props) {
   const [quizCard, setQuizCard] = useState<Card | null>(null);
 
   const onViewableItemsChanged = useRef(
@@ -70,6 +71,7 @@ export default function CardFeed({ cards, height, onSeen }: Props) {
             .map((c) => c.quiz_answer)
             .sort(() => Math.random() - 0.5)}
           onClose={() => setQuizCard(null)}
+          onAnswer={onQuizAnswer}
         />
       )}
     </>

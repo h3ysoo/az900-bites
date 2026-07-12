@@ -25,6 +25,7 @@ function Main() {
   const [persona, setPersona] = useState<string | null>(null);
   const [cards, setCards] = useState<Card[]>([]);
   const [seen, setSeen] = useState<Set<number>>(new Set());
+  const [score, setScore] = useState({ correct: 0, wrong: 0 });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [feedHeight, setFeedHeight] = useState(0);
@@ -34,6 +35,7 @@ function Main() {
     setError(null);
     setCards([]);
     setSeen(new Set());
+    setScore({ correct: 0, wrong: 0 });
     fetchCards(module, persona ?? undefined)
       .then((data) => {
         setCards(data);
@@ -44,6 +46,13 @@ function Main() {
       .catch((e) => setError(String(e)))
       .finally(() => setLoading(false));
   }, [module, persona]);
+
+  const onQuizAnswer = useCallback((correct: boolean) => {
+    setScore((prev) => ({
+      correct: prev.correct + (correct ? 1 : 0),
+      wrong: prev.wrong + (correct ? 0 : 1),
+    }));
+  }, []);
 
   const onSeen = useCallback((cardId: number) => {
     setSeen((prev) => {
@@ -109,6 +118,11 @@ function Main() {
           <Text style={styles.progressText}>
             {seen.size}/{cards.length}
           </Text>
+          {score.correct + score.wrong > 0 && (
+            <Text style={styles.scoreText}>
+              ✅{score.correct} ❌{score.wrong}
+            </Text>
+          )}
         </View>
       )}
       <View
@@ -127,7 +141,12 @@ function Main() {
             Bu modül için henüz kart yok. Yakında! 🚧
           </Text>
         ) : feedHeight > 0 ? (
-          <CardFeed cards={cards} height={feedHeight} onSeen={onSeen} />
+          <CardFeed
+            cards={cards}
+            height={feedHeight}
+            onSeen={onSeen}
+            onQuizAnswer={onQuizAnswer}
+          />
         ) : null}
       </View>
     </View>
@@ -193,6 +212,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#38bdf8',
   },
   progressText: { color: '#94a3b8', fontSize: 12, fontWeight: '600' },
+  scoreText: { color: '#94a3b8', fontSize: 12, fontWeight: '600' },
   feed: { flex: 1, marginTop: 4 },
   center: { flex: 1 },
   message: {
