@@ -1,7 +1,7 @@
 export const PERSONA_LABELS: Record<string, string> = {
-  klasik_hoca: '👨‍🏫 Klasik Hoca',
-  analoji_ustasi: '💡 Analoji Ustası',
-  kisa_kesen: '⚡ Kısa Kesen',
+  klasik_hoca: '👨‍🏫 The Professor',
+  analoji_ustasi: '💡 Analogy Master',
+  kisa_kesen: '⚡ Short & Sweet',
 };
 
 export const PERSONAS = Object.keys(PERSONA_LABELS);

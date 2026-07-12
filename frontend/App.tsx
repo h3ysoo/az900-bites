@@ -120,7 +120,7 @@ function Main() {
             <Text
               style={[styles.chipText, persona === p && styles.chipTextActive]}
             >
-              {p ? PERSONA_LABELS[p] : 'Hepsi'}
+              {p ? PERSONA_LABELS[p] : 'All'}
             </Text>
           </Pressable>
         ))}
@@ -153,12 +153,12 @@ function Main() {
           <ActivityIndicator size="large" color="#38bdf8" style={styles.center} />
         ) : error ? (
           <Text style={styles.message}>
-            API'ye ulaşılamadı.{'\n'}Backend'in çalıştığından ve telefonla aynı
-            ağda olduğundan emin ol.{'\n\n'}{error}
+            Couldn't reach the API.{'\n'}Make sure the backend is running and
+            on the same network as your phone.{'\n\n'}{error}
           </Text>
         ) : cards.length === 0 ? (
           <Text style={styles.message}>
-            Bu modül için henüz kart yok. Yakında! 🚧
+            No cards for this module yet. Coming soon! 🚧
           </Text>
         ) : feedHeight > 0 ? (
           <CardFeed

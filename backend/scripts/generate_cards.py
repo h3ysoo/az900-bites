@@ -25,36 +25,36 @@ SEED_PATH = Path(__file__).resolve().parent / "seed_cards.json"
 
 MODULES = {
     "Cloud Concepts": [
-        "Cloud computing nedir ve temel faydaları",
+        "What is cloud computing and its key benefits",
         "Shared Responsibility Model",
-        "Public, Private ve Hybrid Cloud",
-        "IaaS, PaaS ve SaaS",
-        "High Availability ve Scalability",
-        "Region ve Availability Zone",
+        "Public, Private and Hybrid Cloud",
+        "IaaS, PaaS and SaaS",
+        "High Availability and Scalability",
+        "Regions and Availability Zones",
     ],
     "Architecture & Management": [
-        "Resource, Resource Group ve Subscription hiyerarşisi",
-        "Azure compute: VM, App Service ve Functions",
-        "Azure Storage servisleri",
-        "Microsoft Entra ID ve kimlik yönetimi",
+        "Resource, Resource Group and Subscription hierarchy",
+        "Azure compute: VMs, App Service and Functions",
+        "Azure Storage services",
+        "Microsoft Entra ID and identity management",
     ],
     "Pricing & Support": [
-        "Pricing Calculator ve TCO Calculator",
-        "Maliyeti etkileyen faktörler ve Cost Management",
+        "Pricing Calculator and TCO Calculator",
+        "Cost factors and Cost Management",
         "SLA (Service Level Agreement)",
-        "Azure destek planları",
+        "Azure support plans",
     ],
 }
 
-USER_PROMPT_TEMPLATE = """Konu: {topic} (AZ-900 modülü: {module})
+USER_PROMPT_TEMPLATE = """Topic: {topic} (AZ-900 module: {module})
 
-Bu konu için tek bir öğrenme kartı üret. Yanıtını SADECE şu JSON formatında ver,
-başka hiçbir şey yazma:
+Produce a single learning card for this topic. Reply with ONLY the following
+JSON format, nothing else:
 
 {{
-  "content": "kartın içeriği (üslup kurallarına uygun)",
-  "quiz_question": "bu kavramı test eden kısa bir soru",
-  "quiz_answer": "sorunun kısa ve net doğru cevabı (tek cümle)"
+  "content": "the card content (following your style rules)",
+  "quiz_question": "a short question testing this concept",
+  "quiz_answer": "the short, clear correct answer (one sentence)"
 }}"""
 
 

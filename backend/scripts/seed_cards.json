@@ -1,338 +1,338 @@
 [
   {
     "module": "Cloud Concepts",
-    "topic": "Cloud computing nedir ve temel faydaları",
+    "topic": "What is cloud computing and its key benefits",
     "persona": "klasik_hoca",
-    "content": "Cloud computing, sunucu, depolama ve ağ gibi bilişim kaynaklarının internet üzerinden, kullanıldığı kadar ödenerek tüketilmesidir. Donanım satın almak yerine kaynaklar bir sağlayıcıdan kiralanır. Temel faydaları ölçeklenebilirlik, maliyet esnekliği ve yüksek erişilebilirliktir.",
-    "quiz_question": "Cloud computing'in temel ödeme modeli nedir?",
-    "quiz_answer": "Kullandığın kadar öde (pay-as-you-go) modelidir."
+    "content": "Cloud computing is the delivery of computing resources such as servers, storage and networking over the internet, paid for as you use them. Instead of buying hardware, you rent resources from a provider. Its key benefits are scalability, cost flexibility and high availability.",
+    "quiz_question": "What is the core payment model of cloud computing?",
+    "quiz_answer": "Pay-as-you-go — you pay only for what you use."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "Cloud computing nedir ve temel faydaları",
+    "topic": "What is cloud computing and its key benefits",
     "persona": "analoji_ustasi",
-    "content": "Cloud computing'i elektrik şebekesi gibi düşün: evine jeneratör kurmazsın, prize takarsın ve harcadığın kadar fatura ödersin. Azure da sana sunucu ve depolamayı aynı mantıkla 'prizden' verir. Jeneratör bakımı (donanım derdi) tamamen sağlayıcıya kalır.",
-    "quiz_question": "Elektrik şebekesi benzetmesinde 'prize takmak' neye karşılık gelir?",
-    "quiz_answer": "Kaynakları satın almak yerine internet üzerinden kullanıldığı kadar ödeyerek tüketmeye karşılık gelir."
+    "content": "Think of cloud computing like the electricity grid: you don't install a generator at home, you plug into the wall and pay for what you burn. Azure hands you servers and storage from the same kind of 'socket'. Generator maintenance (the hardware headache) stays entirely with the provider.",
+    "quiz_question": "In the electricity grid analogy, what does 'plugging into the wall' represent?",
+    "quiz_answer": "Consuming resources over the internet and paying for usage instead of buying hardware."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "Cloud computing nedir ve temel faydaları",
+    "topic": "What is cloud computing and its key benefits",
     "persona": "kisa_kesen",
-    "content": "Cloud computing = bilişim kaynaklarını internetten kiralamak. Kullandığın kadar ödersin, donanımla uğraşmazsın.",
-    "quiz_question": "Cloud computing'de donanımın bakımından kim sorumludur?",
-    "quiz_answer": "Cloud sağlayıcısı sorumludur."
+    "content": "Cloud computing = renting computing resources over the internet. Pay for what you use, skip the hardware hassle.",
+    "quiz_question": "Who is responsible for maintaining the hardware in cloud computing?",
+    "quiz_answer": "The cloud provider."
   },
   {
     "module": "Cloud Concepts",
     "topic": "Shared Responsibility Model",
     "persona": "klasik_hoca",
-    "content": "Shared Responsibility Model, güvenlik ve yönetim sorumluluklarının cloud sağlayıcısı ile müşteri arasında paylaşılmasını tanımlar. Fiziksel veri merkezi, ağ ve donanım her zaman sağlayıcının; veri, kimlikler ve erişim yönetimi her zaman müşterinin sorumluluğundadır. Aradaki katmanların sahibi, seçilen hizmet modeline (IaaS, PaaS, SaaS) göre değişir.",
-    "quiz_question": "Shared Responsibility Model'de veri ve kimliklerin sorumluluğu kimdedir?",
-    "quiz_answer": "Her hizmet modelinde müşterinin sorumluluğundadır."
+    "content": "The Shared Responsibility Model defines how security and management duties are split between the cloud provider and the customer. The physical datacenter, network and hardware always belong to the provider; data, identities and access management always belong to the customer. Ownership of the layers in between depends on the service model (IaaS, PaaS, SaaS).",
+    "quiz_question": "In the Shared Responsibility Model, who is responsible for data and identities?",
+    "quiz_answer": "The customer, in every service model."
   },
   {
     "module": "Cloud Concepts",
     "topic": "Shared Responsibility Model",
     "persona": "analoji_ustasi",
-    "content": "Shared Responsibility Model'i kiralık daire gibi düşün: binanın deprem sağlamlığı ve çatısı ev sahibinin işi, ama kapını kilitlemek ve içerideki eşyalar senin sorumluluğun. Azure'da da veri merkezi ve donanım Microsoft'un, verilerin ve şifrelerin ise her zaman senin işin. Hizmet modeli değiştikçe (IaaS'tan SaaS'a) ev sahibinin üstlendiği işler artar.",
-    "quiz_question": "Kiralık daire benzetmesinde 'kapıyı kilitlemek' neye karşılık gelir?",
-    "quiz_answer": "Müşterinin kendi verilerini, kimliklerini ve erişimini korumasına karşılık gelir."
+    "content": "Think of the Shared Responsibility Model like renting an apartment: earthquake-proofing and the roof are the landlord's job, but locking your door and everything inside is on you. In Azure, the datacenter and hardware are Microsoft's job, while your data and passwords are always yours. As you move from IaaS to SaaS, the landlord takes on more of the chores.",
+    "quiz_question": "In the apartment analogy, what does 'locking your door' correspond to?",
+    "quiz_answer": "The customer protecting their own data, identities and access."
   },
   {
     "module": "Cloud Concepts",
     "topic": "Shared Responsibility Model",
     "persona": "kisa_kesen",
-    "content": "Shared Responsibility = güvenlik sorumluluğu paylaşımı. Fiziksel altyapı sağlayıcının, veri ve kimlikler daima müşterinin; arası hizmet modeline göre değişir.",
-    "quiz_question": "Fiziksel veri merkezinin güvenliği kimin sorumluluğundadır?",
-    "quiz_answer": "Her zaman cloud sağlayıcısının sorumluluğundadır."
+    "content": "Shared Responsibility = split security duties. Physical infrastructure is the provider's, data and identities are always the customer's; the middle depends on the service model.",
+    "quiz_question": "Who is responsible for the physical security of the datacenter?",
+    "quiz_answer": "Always the cloud provider."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "Public, Private ve Hybrid Cloud",
+    "topic": "Public, Private and Hybrid Cloud",
     "persona": "klasik_hoca",
-    "content": "Public cloud'da kaynaklar sağlayıcıya aittir ve internet üzerinden herkese sunulur; Azure bunun bir örneğidir. Private cloud, tek bir kuruluşa ayrılmış altyapıdır ve daha fazla kontrol sağlar. Hybrid cloud ise ikisini birleştirir; veriler ve uygulamalar iki ortam arasında paylaşılabilir.",
-    "quiz_question": "Tek bir kuruluşa ayrılmış cloud modeline ne ad verilir?",
-    "quiz_answer": "Private cloud olarak adlandırılır."
+    "content": "In a public cloud, resources are owned by the provider and offered to everyone over the internet; Azure is an example. A private cloud is infrastructure dedicated to a single organization, offering more control. A hybrid cloud combines the two, letting data and applications move between both environments.",
+    "quiz_question": "What is a cloud model dedicated to a single organization called?",
+    "quiz_answer": "A private cloud."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "Public, Private ve Hybrid Cloud",
+    "topic": "Public, Private and Hybrid Cloud",
     "persona": "analoji_ustasi",
-    "content": "Public cloud otobüs gibidir: herkes aynı aracı paylaşır, ucuzdur ve bakımı sana kalmaz. Private cloud kendi araban: pahalı ama tamamen senin kontrolünde. Hybrid ise ikisini birden kullanmak — hafta içi otobüs, hassas yükler için kendi araban.",
-    "quiz_question": "Otobüs-araba benzetmesinde hybrid cloud neye karşılık gelir?",
-    "quiz_answer": "İhtiyaca göre public ve private cloud'un birlikte kullanılmasına karşılık gelir."
+    "content": "A public cloud is like a bus: everyone shares the same vehicle, it's cheap, and maintenance isn't your problem. A private cloud is your own car: expensive but fully under your control. Hybrid means using both — the bus on weekdays, your own car for the sensitive loads.",
+    "quiz_question": "In the bus-and-car analogy, what does hybrid cloud correspond to?",
+    "quiz_answer": "Using public and private cloud together, depending on the need."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "Public, Private ve Hybrid Cloud",
+    "topic": "Public, Private and Hybrid Cloud",
     "persona": "kisa_kesen",
-    "content": "Public = paylaşımlı, sağlayıcının altyapısı. Private = tek kuruluşa özel. Hybrid = ikisinin birleşimi.",
-    "quiz_question": "Azure hangi cloud dağıtım modelinin örneğidir?",
-    "quiz_answer": "Public cloud örneğidir."
+    "content": "Public = shared, provider's infrastructure. Private = dedicated to one organization. Hybrid = a mix of both.",
+    "quiz_question": "Which cloud deployment model is Azure an example of?",
+    "quiz_answer": "Public cloud."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "IaaS, PaaS ve SaaS",
+    "topic": "IaaS, PaaS and SaaS",
     "persona": "klasik_hoca",
-    "content": "IaaS (Infrastructure as a Service) sanal makine ve ağ gibi ham altyapıyı kiralamaktır; işletim sisteminden itibaren yönetim müşterinindir. PaaS (Platform as a Service) uygulama geliştirmek için hazır platform sunar; altyapı ve işletim sistemi sağlayıcıya aittir. SaaS (Software as a Service) ise doğrudan kullanılan hazır yazılımdır, örneğin Microsoft 365.",
-    "quiz_question": "Microsoft 365 hangi hizmet modelinin örneğidir?",
-    "quiz_answer": "SaaS (Software as a Service) örneğidir."
+    "content": "IaaS (Infrastructure as a Service) means renting raw infrastructure such as virtual machines and networking; you manage everything from the operating system up. PaaS (Platform as a Service) provides a ready-made platform for building applications; the infrastructure and OS belong to the provider. SaaS (Software as a Service) is ready-to-use software, such as Microsoft 365.",
+    "quiz_question": "Which service model is Microsoft 365 an example of?",
+    "quiz_answer": "SaaS (Software as a Service)."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "IaaS, PaaS ve SaaS",
+    "topic": "IaaS, PaaS and SaaS",
     "persona": "analoji_ustasi",
-    "content": "Pizza benzetmesiyle düşün: IaaS mutfak kiralamak gibi — malzemeyi getirip pizzayı kendin yaparsın. PaaS hazır hamur ve fırın verilen bir tezgah — sadece malzemeleri dizersin. SaaS ise restoranda pizza söylemek — her şey hazır gelir, sen sadece yersin.",
-    "quiz_question": "Pizza benzetmesinde 'restoranda hazır pizza yemek' hangi modele karşılık gelir?",
-    "quiz_answer": "SaaS modeline karşılık gelir."
+    "content": "Think pizza: IaaS is renting a kitchen — you bring the ingredients and make the pizza yourself. PaaS is a counter with the dough and oven provided — you just add the toppings. SaaS is ordering at a restaurant — everything arrives ready, you just eat.",
+    "quiz_question": "In the pizza analogy, which model does 'eating at a restaurant' correspond to?",
+    "quiz_answer": "SaaS."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "IaaS, PaaS ve SaaS",
+    "topic": "IaaS, PaaS and SaaS",
     "persona": "kisa_kesen",
-    "content": "IaaS = ham altyapı (VM, ağ). PaaS = hazır geliştirme platformu. SaaS = kullanıma hazır yazılım.",
-    "quiz_question": "Sanal makine kiralamak hangi hizmet modelidir?",
-    "quiz_answer": "IaaS modelidir."
+    "content": "IaaS = raw infrastructure (VMs, networking). PaaS = ready development platform. SaaS = ready-to-use software.",
+    "quiz_question": "Renting a virtual machine falls under which service model?",
+    "quiz_answer": "IaaS."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "High Availability ve Scalability",
+    "topic": "High Availability and Scalability",
     "persona": "klasik_hoca",
-    "content": "High Availability, bir hizmetin arızalara rağmen kesintisiz çalışmaya devam etme yeteneğidir ve genellikle yüzde cinsinden uptime ile ölçülür. Scalability ise artan talebe göre kaynakların büyütülebilmesidir. Dikey ölçekleme (scale up) makineyi güçlendirmek, yatay ölçekleme (scale out) makine sayısını artırmaktır.",
-    "quiz_question": "Makine sayısını artırarak ölçeklemeye ne ad verilir?",
-    "quiz_answer": "Yatay ölçekleme (scale out) olarak adlandırılır."
+    "content": "High availability is a service's ability to keep running despite failures, usually measured as an uptime percentage. Scalability is the ability to grow resources with demand. Vertical scaling (scale up) means making a machine more powerful; horizontal scaling (scale out) means adding more machines.",
+    "quiz_question": "What is scaling by adding more machines called?",
+    "quiz_answer": "Horizontal scaling (scale out)."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "High Availability ve Scalability",
+    "topic": "High Availability and Scalability",
     "persona": "analoji_ustasi",
-    "content": "Bir kafeteryayı düşün: yoğunlukta ikinci kasayı açmak scale out, kasiyere daha hızlı bir kasa vermek scale up. High Availability ise kafenin tek kasiyer hastalansa bile kapanmaması — yedek personel her zaman hazır. Azure'da bu yedeklilik, hizmetin kesintisiz kalmasını sağlar.",
-    "quiz_question": "Kafeterya benzetmesinde 'ikinci kasayı açmak' neye karşılık gelir?",
-    "quiz_answer": "Yatay ölçeklemeye (scale out) karşılık gelir."
+    "content": "Picture a cafeteria: opening a second till at rush hour is scale out; giving the cashier a faster till is scale up. High availability is the cafe never closing even if the only cashier calls in sick — backup staff are always ready. In Azure, that redundancy keeps the service running.",
+    "quiz_question": "In the cafeteria analogy, what does 'opening a second till' correspond to?",
+    "quiz_answer": "Horizontal scaling (scale out)."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "High Availability ve Scalability",
+    "topic": "High Availability and Scalability",
     "persona": "kisa_kesen",
-    "content": "High Availability = kesintisiz hizmet, uptime yüzdesiyle ölçülür. Scale up = makineyi güçlendir; scale out = makine ekle.",
-    "quiz_question": "High Availability genellikle nasıl ölçülür?",
-    "quiz_answer": "Uptime yüzdesiyle (örneğin %99,9) ölçülür."
+    "content": "High availability = uninterrupted service, measured by uptime percentage. Scale up = beef up the machine; scale out = add machines.",
+    "quiz_question": "How is high availability usually measured?",
+    "quiz_answer": "As an uptime percentage (e.g. 99.9%)."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "Region ve Availability Zone",
+    "topic": "Regions and Availability Zones",
     "persona": "klasik_hoca",
-    "content": "Region, Azure'un dünyanın belirli bir coğrafyasında bulunan veri merkezleri kümesidir. Availability Zone ise bir Region içinde bağımsız güç, soğutma ve ağa sahip, fiziksel olarak ayrık bir veya daha fazla veri merkezidir. Uygulamayı birden fazla zone'a dağıtmak, tek bir veri merkezi arızasına karşı koruma sağlar.",
-    "quiz_question": "Bir Region içindeki bağımsız veri merkezi gruplarına ne ad verilir?",
-    "quiz_answer": "Availability Zone olarak adlandırılır."
+    "content": "A Region is a set of Azure datacenters located in a specific geography. An Availability Zone is one or more physically separate datacenters within a Region, each with independent power, cooling and networking. Deploying across multiple zones protects an application from a single datacenter failure.",
+    "quiz_question": "What are the independent datacenter groups within a Region called?",
+    "quiz_answer": "Availability Zones."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "Region ve Availability Zone",
+    "topic": "Regions and Availability Zones",
     "persona": "analoji_ustasi",
-    "content": "Region'ı bir bankanın İstanbul'daki tüm şubeleri gibi düşün; Availability Zone ise şehrin farklı semtlerindeki tek tek şubeler. Bir semtte elektrik kesilse diğer şubeler çalışmaya devam eder. Verini birden fazla 'şubeye' koyarsan tek bir arıza seni durduramaz.",
-    "quiz_question": "Banka şubesi benzetmesinde bir semtteki elektrik kesintisi neyi temsil eder?",
-    "quiz_answer": "Tek bir Availability Zone'un (veri merkezinin) arızalanmasını temsil eder."
+    "content": "Think of a Region as all of a bank's branches in Istanbul, and Availability Zones as the individual branches in different districts. If one district loses power, the other branches keep working. Put your data in several 'branches' and no single failure can stop you.",
+    "quiz_question": "In the bank branch analogy, what does a power cut in one district represent?",
+    "quiz_answer": "The failure of a single Availability Zone (datacenter)."
   },
   {
     "module": "Cloud Concepts",
-    "topic": "Region ve Availability Zone",
+    "topic": "Regions and Availability Zones",
     "persona": "kisa_kesen",
-    "content": "Region = bir coğrafyadaki veri merkezleri kümesi. Availability Zone = Region içindeki bağımsız, ayrık veri merkezi. Çoklu zone = arızaya dayanıklılık.",
-    "quiz_question": "Uygulamayı neden birden fazla Availability Zone'a dağıtırız?",
-    "quiz_answer": "Tek bir veri merkezi arızasında hizmetin kesintisiz devam etmesi için."
+    "content": "Region = a cluster of datacenters in one geography. Availability Zone = an independent, isolated datacenter within a Region. Multiple zones = fault tolerance.",
+    "quiz_question": "Why do we deploy an application across multiple Availability Zones?",
+    "quiz_answer": "So the service keeps running if a single datacenter fails."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Resource, Resource Group ve Subscription hiyerarşisi",
+    "topic": "Resource, Resource Group and Subscription hierarchy",
     "persona": "klasik_hoca",
-    "content": "Azure'da Resource, VM veya veritabanı gibi yönetilen her bir varlıktır. Resource Group, ilgili resource'ları bir arada tutan mantıksal kapsayıcıdır; bir resource yalnızca bir Resource Group'a ait olabilir. Subscription ise faturalama ve erişim sınırı çizen üst seviye birimdir ve birden çok Resource Group içerir.",
-    "quiz_question": "Bir resource aynı anda kaç Resource Group'a ait olabilir?",
-    "quiz_answer": "Yalnızca bir Resource Group'a ait olabilir."
+    "content": "In Azure, a Resource is any managed entity such as a VM or a database. A Resource Group is a logical container that holds related resources; a resource can belong to only one Resource Group. A Subscription is the top-level unit that defines billing and access boundaries and contains multiple Resource Groups.",
+    "quiz_question": "How many Resource Groups can a resource belong to at once?",
+    "quiz_answer": "Only one Resource Group."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Resource, Resource Group ve Subscription hiyerarşisi",
+    "topic": "Resource, Resource Group and Subscription hierarchy",
     "persona": "analoji_ustasi",
-    "content": "Bir apartman düşün: daireler Resource'lar, katlar Resource Group'lar, apartmanın tamamı ise Subscription. Her daire tek bir katta bulunur, faturalar ise apartman yönetimine (Subscription) kesilir. Bir katı boşaltırsan (Resource Group silme) içindeki tüm daireler de gider.",
-    "quiz_question": "Apartman benzetmesinde faturaların kesildiği yer neresidir?",
-    "quiz_answer": "Subscription'dır; faturalama Subscription seviyesinde yapılır."
+    "content": "Picture an apartment building: the flats are Resources, the floors are Resource Groups, and the whole building is the Subscription. Each flat sits on exactly one floor, and the bills go to the building management (the Subscription). Clear out a floor (delete a Resource Group) and every flat on it goes too.",
+    "quiz_question": "In the apartment analogy, where are the bills sent?",
+    "quiz_answer": "To the Subscription; billing happens at the Subscription level."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Resource, Resource Group ve Subscription hiyerarşisi",
+    "topic": "Resource, Resource Group and Subscription hierarchy",
     "persona": "kisa_kesen",
-    "content": "Resource = tek varlık. Resource Group = mantıksal kapsayıcı (silersen içindekiler de gider). Subscription = faturalama sınırı.",
-    "quiz_question": "Resource Group silinince içindeki resource'lara ne olur?",
-    "quiz_answer": "İçindeki tüm resource'lar da silinir."
+    "content": "Resource = a single entity. Resource Group = logical container (delete it and its contents go too). Subscription = billing boundary.",
+    "quiz_question": "What happens to the resources inside a deleted Resource Group?",
+    "quiz_answer": "They are all deleted with it."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Azure compute: VM, App Service ve Functions",
+    "topic": "Azure compute: VMs, App Service and Functions",
     "persona": "klasik_hoca",
-    "content": "Virtual Machine, işletim sistemi dahil tam kontrol sunan IaaS compute hizmetidir. App Service, web uygulamalarını altyapı yönetmeden barındıran bir PaaS hizmetidir. Azure Functions ise yalnızca kod çalıştığı anda ücretlendirilen, olay tetiklemeli serverless hizmettir.",
-    "quiz_question": "Olay tetiklemeli, serverless compute hizmeti hangisidir?",
-    "quiz_answer": "Azure Functions'tır."
+    "content": "A Virtual Machine is an IaaS compute service that gives you full control, including the operating system. App Service is a PaaS offering that hosts web applications without you managing infrastructure. Azure Functions is an event-driven serverless service billed only while your code runs.",
+    "quiz_question": "Which service is event-driven and serverless?",
+    "quiz_answer": "Azure Functions."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Azure compute: VM, App Service ve Functions",
+    "topic": "Azure compute: VMs, App Service and Functions",
     "persona": "analoji_ustasi",
-    "content": "VM ev satın almak gibi: her şey senin, tamiri de senin. App Service otel odası: sen sadece yaşarsın, temizlik ve bakım otelin işi. Functions ise taksi: sadece bindiğin (kodun çalıştığı) süre için ödersin, araç park halindeyken para gitmez.",
-    "quiz_question": "Taksi benzetmesi hangi compute hizmetini anlatır?",
-    "quiz_answer": "Azure Functions'ı; yalnızca kod çalışırken ödeme yapılır."
+    "content": "A VM is like buying a house: it's all yours, repairs included. App Service is a hotel room: you just live there while cleaning and maintenance are the hotel's job. Functions is a taxi: you pay only for the ride (while your code runs) — no money leaks while the car is parked.",
+    "quiz_question": "Which compute service does the taxi analogy describe?",
+    "quiz_answer": "Azure Functions; you pay only while the code runs."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Azure compute: VM, App Service ve Functions",
+    "topic": "Azure compute: VMs, App Service and Functions",
     "persona": "kisa_kesen",
-    "content": "VM = tam kontrol (IaaS). App Service = web uygulaması barındırma (PaaS). Functions = olay tetiklemeli, çalıştığı kadar öde (serverless).",
-    "quiz_question": "İşletim sistemi üzerinde tam kontrol veren compute hizmeti hangisidir?",
-    "quiz_answer": "Virtual Machine'dir."
+    "content": "VM = full control (IaaS). App Service = web app hosting (PaaS). Functions = event-driven, pay-per-execution (serverless).",
+    "quiz_question": "Which compute service gives full control over the operating system?",
+    "quiz_answer": "The Virtual Machine."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Azure Storage servisleri",
+    "topic": "Azure Storage services",
     "persona": "klasik_hoca",
-    "content": "Azure Blob Storage, resim ve video gibi yapılandırılmamış nesneleri saklar. Azure Files, SMB protokolüyle erişilen paylaşımlı dosya sistemleri sunar. Erişim sıklığına göre Hot, Cool ve Archive katmanları maliyet optimizasyonu sağlar.",
-    "quiz_question": "Yapılandırılmamış nesneler (resim, video) için hangi storage hizmeti kullanılır?",
-    "quiz_answer": "Azure Blob Storage kullanılır."
+    "content": "Azure Blob Storage stores unstructured objects such as images and videos. Azure Files provides shared file systems accessed over the SMB protocol. The Hot, Cool and Archive access tiers optimize cost according to how often data is accessed.",
+    "quiz_question": "Which storage service is used for unstructured objects like images and videos?",
+    "quiz_answer": "Azure Blob Storage."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Azure Storage servisleri",
+    "topic": "Azure Storage services",
     "persona": "analoji_ustasi",
-    "content": "Storage katmanlarını dolabına benzet: Hot, her gün giydiğin kıyafetlerin olduğu ön raf; Cool, mevsimlik kıyafetlerin olduğu üst raf; Archive ise bodrumdaki bavul — ucuz ama ulaşması saatler alır. Azure'da veriye ne sıklıkla dokunduğun hangi rafa koyacağını belirler.",
-    "quiz_question": "Bodrumdaki bavul benzetmesi hangi erişim katmanını anlatır?",
-    "quiz_answer": "Archive katmanını; en ucuzdur ama erişim saatler sürebilir."
+    "content": "Think of storage tiers as your wardrobe: Hot is the front shelf with your everyday clothes; Cool is the top shelf with seasonal wear; Archive is the suitcase in the basement — cheap, but reaching it takes hours. In Azure, how often you touch the data decides which shelf it belongs on.",
+    "quiz_question": "Which access tier does the 'suitcase in the basement' describe?",
+    "quiz_answer": "The Archive tier; it is the cheapest but retrieval can take hours."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Azure Storage servisleri",
+    "topic": "Azure Storage services",
     "persona": "kisa_kesen",
-    "content": "Blob = nesne depolama. Files = SMB dosya paylaşımı. Katmanlar: Hot (sık erişim) > Cool > Archive (en ucuz, en yavaş).",
-    "quiz_question": "En düşük maliyetli storage erişim katmanı hangisidir?",
-    "quiz_answer": "Archive katmanıdır."
+    "content": "Blob = object storage. Files = SMB file shares. Tiers: Hot (frequent access) > Cool > Archive (cheapest, slowest).",
+    "quiz_question": "Which storage access tier has the lowest cost?",
+    "quiz_answer": "The Archive tier."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Microsoft Entra ID ve kimlik yönetimi",
+    "topic": "Microsoft Entra ID and identity management",
     "persona": "klasik_hoca",
-    "content": "Microsoft Entra ID (eski adıyla Azure Active Directory), Azure'un bulut tabanlı kimlik ve erişim yönetimi hizmetidir. Kullanıcıların tek bir kimlikle birçok uygulamaya erişmesini (single sign-on) sağlar. Multi-Factor Authentication ile parolaya ek bir doğrulama katmanı ekler.",
-    "quiz_question": "Microsoft Entra ID'nin eski adı nedir?",
-    "quiz_answer": "Azure Active Directory'dir."
+    "content": "Microsoft Entra ID (formerly Azure Active Directory) is Azure's cloud-based identity and access management service. It lets users reach many applications with a single identity (single sign-on). Multi-Factor Authentication adds a verification layer on top of the password.",
+    "quiz_question": "What was Microsoft Entra ID formerly called?",
+    "quiz_answer": "Azure Active Directory."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Microsoft Entra ID ve kimlik yönetimi",
+    "topic": "Microsoft Entra ID and identity management",
     "persona": "analoji_ustasi",
-    "content": "Entra ID'yi bir sitenin güvenlik kulübesi gibi düşün: içeri girecek herkesin kimliğini tek noktadan kontrol eder, tanıdıklarına tüm bloklara geçiş kartı verir (single sign-on). MFA ise kimlik kartına ek olarak telefonuna gelen kodu sorması — kartın çalınsa bile içeri girilemez.",
-    "quiz_question": "Güvenlik kulübesi benzetmesinde 'tüm bloklara geçiş kartı' neyi anlatır?",
-    "quiz_answer": "Single sign-on'u; tek kimlikle birçok uygulamaya erişmeyi anlatır."
+    "content": "Think of Entra ID as the security booth of a gated complex: it checks everyone's ID at a single point and hands trusted people a pass that opens every block (single sign-on). MFA is the guard also asking for the code sent to your phone — even a stolen pass won't get anyone in.",
+    "quiz_question": "In the security booth analogy, what does the 'pass that opens every block' describe?",
+    "quiz_answer": "Single sign-on; one identity granting access to many applications."
   },
   {
     "module": "Architecture & Management",
-    "topic": "Microsoft Entra ID ve kimlik yönetimi",
+    "topic": "Microsoft Entra ID and identity management",
     "persona": "kisa_kesen",
-    "content": "Entra ID = bulut kimlik yönetimi (eski adı Azure AD). SSO = tek kimlik, çok uygulama. MFA = parola + ikinci doğrulama.",
-    "quiz_question": "Parolaya ek doğrulama katmanı ekleyen özellik nedir?",
+    "content": "Entra ID = cloud identity management (formerly Azure AD). SSO = one identity, many apps. MFA = password + a second verification.",
+    "quiz_question": "Which feature adds an extra verification layer on top of the password?",
     "quiz_answer": "Multi-Factor Authentication (MFA)."
   },
   {
     "module": "Pricing & Support",
-    "topic": "Pricing Calculator ve TCO Calculator",
+    "topic": "Pricing Calculator and TCO Calculator",
     "persona": "klasik_hoca",
-    "content": "Pricing Calculator, planlanan Azure hizmetlerinin aylık maliyetini önceden tahmin etmeye yarar. TCO (Total Cost of Ownership) Calculator ise mevcut on-premises altyapıyı Azure'a taşımanın toplam sahip olma maliyetini karşılaştırır. İkisi de ücretsizdir ve satın alma öncesi planlama araçlarıdır.",
-    "quiz_question": "On-premises altyapıyı Azure'a taşımanın maliyetini karşılaştıran araç hangisidir?",
-    "quiz_answer": "TCO (Total Cost of Ownership) Calculator'dır."
+    "content": "The Pricing Calculator estimates the monthly cost of planned Azure services in advance. The TCO (Total Cost of Ownership) Calculator compares the total cost of moving your existing on-premises infrastructure to Azure. Both are free planning tools used before purchase.",
+    "quiz_question": "Which tool compares the cost of moving on-premises infrastructure to Azure?",
+    "quiz_answer": "The TCO (Total Cost of Ownership) Calculator."
   },
   {
     "module": "Pricing & Support",
-    "topic": "Pricing Calculator ve TCO Calculator",
+    "topic": "Pricing Calculator and TCO Calculator",
     "persona": "analoji_ustasi",
-    "content": "Pricing Calculator, market alışverişinden önce sepeti web sitesinde doldurup tutarı görmek gibi — daha ödeme yapmadan faturayı bilirsin. TCO Calculator ise 'evde yemek mi, dışarıda yemek mi daha ekonomik?' hesabı: kendi sunucu odanla (on-premises) Azure'u kıyaslar.",
-    "quiz_question": "Market sepeti benzetmesi hangi aracı anlatır?",
-    "quiz_answer": "Pricing Calculator'ı; hizmetlerin aylık maliyetini önceden tahmin eder."
+    "content": "The Pricing Calculator is like filling your basket on a grocery site before shopping — you know the bill before you pay. The TCO Calculator is the 'cook at home or eat out?' math: it weighs your own server room (on-premises) against Azure.",
+    "quiz_question": "Which tool does the grocery basket analogy describe?",
+    "quiz_answer": "The Pricing Calculator; it estimates the monthly cost of services in advance."
   },
   {
     "module": "Pricing & Support",
-    "topic": "Pricing Calculator ve TCO Calculator",
+    "topic": "Pricing Calculator and TCO Calculator",
     "persona": "kisa_kesen",
-    "content": "Pricing Calculator = planlanan hizmetlerin aylık maliyet tahmini. TCO Calculator = on-premises vs Azure toplam maliyet kıyası.",
-    "quiz_question": "Azure hizmetlerinin aylık maliyetini tahmin eden araç nedir?",
-    "quiz_answer": "Pricing Calculator'dır."
+    "content": "Pricing Calculator = monthly cost estimate for planned services. TCO Calculator = on-premises vs Azure total cost comparison.",
+    "quiz_question": "Which tool estimates the monthly cost of Azure services?",
+    "quiz_answer": "The Pricing Calculator."
   },
   {
     "module": "Pricing & Support",
-    "topic": "Maliyeti etkileyen faktörler ve Cost Management",
+    "topic": "Cost factors and Cost Management",
     "persona": "klasik_hoca",
-    "content": "Azure maliyetini resource tipi, tüketim miktarı, seçilen Region ve ağ trafiği (özellikle dışa giden veri) etkiler. Microsoft Cost Management aracı, harcamaları izlemeye, bütçe oluşturmaya ve maliyet uyarıları kurmaya yarar. Kullanılmayan kaynakları kapatmak en temel tasarruf yöntemidir.",
-    "quiz_question": "Azure'da harcama izleme ve bütçe uyarıları için hangi araç kullanılır?",
-    "quiz_answer": "Microsoft Cost Management kullanılır."
+    "content": "Azure costs are affected by resource type, consumption, the chosen Region and network traffic — especially outbound data. The Microsoft Cost Management tool helps you track spending, create budgets and set cost alerts. Shutting down unused resources is the most basic way to save.",
+    "quiz_question": "Which tool is used for tracking spending and budget alerts in Azure?",
+    "quiz_answer": "Microsoft Cost Management."
   },
   {
     "module": "Pricing & Support",
-    "topic": "Maliyeti etkileyen faktörler ve Cost Management",
+    "topic": "Cost factors and Cost Management",
     "persona": "analoji_ustasi",
-    "content": "Azure faturası elektrik faturası gibidir: klimayı (VM) açık unutursan sayaç döner. Cost Management ise akıllı sayaç uygulaması — anlık tüketimi gösterir, limit aşılınca telefonuna bildirim atar. Region seçimi de şehirden şehre değişen elektrik tarifesi gibi düşünülebilir.",
-    "quiz_question": "Elektrik faturası benzetmesinde 'klimayı açık unutmak' neye karşılık gelir?",
-    "quiz_answer": "Kullanılmayan kaynakları çalışır bırakmaya karşılık gelir; maliyet boşuna artar."
+    "content": "An Azure bill is like an electricity bill: leave the AC (a VM) running and the meter keeps spinning. Cost Management is the smart meter app — it shows live usage and pings your phone when you cross the limit. Region choice is like electricity tariffs varying from city to city.",
+    "quiz_question": "In the electricity bill analogy, what does 'leaving the AC running' correspond to?",
+    "quiz_answer": "Leaving unused resources running; costs keep climbing for nothing."
   },
   {
     "module": "Pricing & Support",
-    "topic": "Maliyeti etkileyen faktörler ve Cost Management",
+    "topic": "Cost factors and Cost Management",
     "persona": "kisa_kesen",
-    "content": "Maliyeti etkiler: resource tipi, tüketim, Region, dışa giden trafik. Cost Management = izleme + bütçe + uyarı.",
-    "quiz_question": "Azure'da maliyeti etkileyen faktörlerden iki tanesini say.",
-    "quiz_answer": "Resource tipi ve seçilen Region (ayrıca tüketim miktarı ve dışa giden trafik)."
+    "content": "Cost drivers: resource type, consumption, Region, outbound traffic. Cost Management = tracking + budgets + alerts.",
+    "quiz_question": "Name two factors that affect cost in Azure.",
+    "quiz_answer": "Resource type and the chosen Region (also consumption and outbound traffic)."
   },
   {
     "module": "Pricing & Support",
     "topic": "SLA (Service Level Agreement)",
     "persona": "klasik_hoca",
-    "content": "SLA, Microsoft'un bir hizmet için taahhüt ettiği çalışma süresi (uptime) yüzdesini tanımlayan resmi sözleşmedir; örneğin %99,9. Taahhüt karşılanmazsa müşteri hizmet kredisi alabilir. Birden çok hizmet birlikte kullanıldığında bileşik SLA, tek tek SLA'lerin çarpımıyla düşer.",
-    "quiz_question": "SLA taahhüdü karşılanmazsa müşteri ne alır?",
-    "quiz_answer": "Hizmet kredisi (service credit) alır."
+    "content": "An SLA is the formal agreement defining the uptime percentage Microsoft commits to for a service, for example 99.9%. If the commitment is missed, the customer may receive service credits. When several services are combined, the composite SLA drops, being the product of the individual SLAs.",
+    "quiz_question": "What does a customer receive if the SLA commitment is missed?",
+    "quiz_answer": "Service credits."
   },
   {
     "module": "Pricing & Support",
     "topic": "SLA (Service Level Agreement)",
     "persona": "analoji_ustasi",
-    "content": "SLA'yi kargo firmasının 'ertesi gün teslim' sözü gibi düşün: geç kalırsa ücret iadesi alırsın. Azure da '%99,9 açık kalacağım' der, sözünü tutamazsa hizmet kredisi öder. İki kargo firmasını zincirleme kullanırsan gecikme riski artar — bileşik SLA'nin düşmesi de aynen böyledir.",
-    "quiz_question": "Zincirleme kargo benzetmesi hangi kavramı anlatır?",
-    "quiz_answer": "Bileşik SLA'yi; birden çok hizmet birlikte kullanılınca toplam uptime taahhüdü düşer."
+    "content": "Think of an SLA as a courier's 'next-day delivery' promise: if it's late, you get a refund. Azure promises '99.9% uptime' and pays service credits when it falls short. Chain two couriers together and the risk of delay grows — that's exactly how a composite SLA drops.",
+    "quiz_question": "Which concept does the chained courier analogy describe?",
+    "quiz_answer": "The composite SLA; combining services lowers the total uptime commitment."
   },
   {
     "module": "Pricing & Support",
     "topic": "SLA (Service Level Agreement)",
     "persona": "kisa_kesen",
-    "content": "SLA = uptime taahhüdü (ör. %99,9). Tutulmazsa hizmet kredisi. Çoklu hizmet = bileşik SLA düşer.",
-    "quiz_question": "SLA neyi taahhüt eder?",
-    "quiz_answer": "Hizmetin çalışma süresi (uptime) yüzdesini taahhüt eder."
+    "content": "SLA = uptime commitment (e.g. 99.9%). Missed = service credits. Multiple services = composite SLA drops.",
+    "quiz_question": "What does an SLA commit to?",
+    "quiz_answer": "The service's uptime percentage."
   },
   {
     "module": "Pricing & Support",
-    "topic": "Azure destek planları",
+    "topic": "Azure support plans",
     "persona": "klasik_hoca",
-    "content": "Azure destek planları Basic, Developer, Standard ve Professional Direct olarak sıralanır. Basic tüm müşterilere ücretsizdir ve faturalama desteği içerir; teknik destek Developer ve üzeri planlarla gelir. Yanıt süreleri ve kapsam, plan seviyesi yükseldikçe artar.",
-    "quiz_question": "Teknik destek en düşük hangi planla birlikte gelir?",
-    "quiz_answer": "Developer planıyla gelir; Basic yalnızca faturalama desteği içerir."
+    "content": "Azure support plans are, in order, Basic, Developer, Standard and Professional Direct. Basic is free for all customers and covers billing support; technical support starts with the Developer plan and above. Response times and coverage improve as the plan level rises.",
+    "quiz_question": "What is the lowest plan that includes technical support?",
+    "quiz_answer": "The Developer plan; Basic only covers billing support."
   },
   {
     "module": "Pricing & Support",
-    "topic": "Azure destek planları",
+    "topic": "Azure support plans",
     "persona": "analoji_ustasi",
-    "content": "Destek planlarını uçak bileti sınıfları gibi düşün: Basic ekonomi — herkese dahil ama servis sınırlı. Developer, yemek servisi olan ekonomi; Standard business class — sorunlara daha hızlı yanıt. Professional Direct ise first class: özel ilgi ve en kısa bekleme süresi.",
-    "quiz_question": "Uçak sınıfı benzetmesinde 'first class' hangi destek planıdır?",
-    "quiz_answer": "Professional Direct planıdır."
+    "content": "Think of support plans as airline cabin classes: Basic is economy — included for everyone, but service is limited. Developer is economy with meals; Standard is business class — faster answers to your problems. Professional Direct is first class: personal attention and the shortest wait.",
+    "quiz_question": "In the cabin class analogy, which support plan is 'first class'?",
+    "quiz_answer": "Professional Direct."
   },
   {
     "module": "Pricing & Support",
-    "topic": "Azure destek planları",
+    "topic": "Azure support plans",
     "persona": "kisa_kesen",
-    "content": "Planlar: Basic (ücretsiz, faturalama) < Developer < Standard < Professional Direct. Plan yükseldikçe yanıt hızlanır.",
-    "quiz_question": "Tüm Azure müşterilerine ücretsiz sunulan destek planı hangisidir?",
-    "quiz_answer": "Basic plandır."
+    "content": "Plans: Basic (free, billing) < Developer < Standard < Professional Direct. Higher plan = faster response.",
+    "quiz_question": "Which support plan is free for all Azure customers?",
+    "quiz_answer": "The Basic plan."
   }
 ]

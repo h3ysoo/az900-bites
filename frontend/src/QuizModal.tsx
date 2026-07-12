@@ -54,11 +54,11 @@ export default function QuizModal({ card, distractors, onClose, onAnswer }: Prop
           })}
           {selected !== null && (
             <Text style={[styles.feedback, { color: isCorrect ? '#4ade80' : '#f87171' }]}>
-              {isCorrect ? 'Doğru! 🎉' : 'Yanlış — doğru cevap yeşille işaretli.'}
+              {isCorrect ? 'Correct! 🎉' : 'Wrong — the right answer is marked in green.'}
             </Text>
           )}
           <Pressable onPress={onClose} style={styles.close}>
-            <Text style={styles.closeText}>Kapat</Text>
+            <Text style={styles.closeText}>Close</Text>
           </Pressable>
         </View>
       </View>
