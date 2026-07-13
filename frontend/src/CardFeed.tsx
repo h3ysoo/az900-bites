@@ -8,7 +8,7 @@ import {
   ViewToken,
 } from 'react-native';
 import { Card } from './api';
-import { PERSONA_LABELS } from './personas';
+import { personaLabel } from './personas';
 import QuizModal from './QuizModal';
 
 interface Props {
@@ -32,9 +32,7 @@ export default function CardFeed({ cards, height, onSeen, onQuizAnswer }: Props)
   const renderItem = useCallback(
     ({ item }: { item: Card }) => (
       <View style={[styles.card, { height }]}>
-        <Text style={styles.persona}>
-          {PERSONA_LABELS[item.persona] ?? item.persona}
-        </Text>
+        <Text style={styles.persona}>{personaLabel(item.persona)}</Text>
         <Text style={styles.topic}>{item.topic}</Text>
         <Text style={styles.content}>{item.content}</Text>
         <Pressable style={styles.quizButton} onPress={() => setQuizCard(item)}>

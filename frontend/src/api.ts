@@ -17,6 +17,13 @@ export interface Card {
 const host = Constants.expoConfig?.hostUri?.split(':')[0] ?? 'localhost';
 export const API_URL = `http://${host}:8000`;
 
+export async function fetchPersonas(): Promise<string[]> {
+  const res = await fetch(`${API_URL}/personas`);
+  if (!res.ok) throw new Error(`API error: ${res.status}`);
+  const rows: { persona: string }[] = await res.json();
+  return rows.map((row) => row.persona);
+}
+
 export async function fetchCards(module: string, persona?: string): Promise<Card[]> {
   const params = new URLSearchParams({ module });
   if (persona) params.set('persona', persona);

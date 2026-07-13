@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import CardFeed from './src/CardFeed';
-import { Card, fetchCards } from './src/api';
-import { PERSONAS, PERSONA_LABELS } from './src/personas';
+import { Card, fetchCards, fetchPersonas } from './src/api';
+import { PERSONAS, personaLabel } from './src/personas';
 import { loadSeen, saveSeen } from './src/progress';
 
 const MODULES = [
@@ -24,12 +24,21 @@ function Main() {
   const insets = useSafeAreaInsets();
   const [module, setModule] = useState(MODULES[0]);
   const [persona, setPersona] = useState<string | null>(null);
+  const [personas, setPersonas] = useState<string[]>(PERSONAS);
   const [cards, setCards] = useState<Card[]>([]);
   const [seen, setSeen] = useState<Set<number>>(new Set());
   const [score, setScore] = useState({ correct: 0, wrong: 0 });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [feedHeight, setFeedHeight] = useState(0);
+
+  useEffect(() => {
+    // The chip row follows whatever personas exist in the database, so a
+    // newly added prompt file shows up without a frontend change.
+    fetchPersonas()
+      .then(setPersonas)
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -111,7 +120,7 @@ function Main() {
         style={styles.personaRow}
         contentContainerStyle={styles.chipRowContent}
       >
-        {[null, ...PERSONAS].map((p) => (
+        {[null, ...personas].map((p) => (
           <Pressable
             key={p ?? 'all'}
             onPress={() => setPersona(p)}
@@ -120,7 +129,7 @@ function Main() {
             <Text
               style={[styles.chipText, persona === p && styles.chipTextActive]}
             >
-              {p ? PERSONA_LABELS[p] : 'All'}
+              {p ? personaLabel(p) : 'All'}
             </Text>
           </Pressable>
         ))}

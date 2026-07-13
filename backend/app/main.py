@@ -27,7 +27,13 @@ def startup() -> None:
 def root() -> dict:
     return {
         "app": "AZ-900 Bites API",
-        "endpoints": ["/health", "/modules", "/cards?module=&persona=", "/docs"],
+        "endpoints": [
+            "/health",
+            "/modules",
+            "/personas",
+            "/cards?module=&persona=",
+            "/docs",
+        ],
     }
 
 
@@ -41,6 +47,16 @@ def list_modules() -> list:
     with get_connection() as conn:
         rows = conn.execute(
             "SELECT module, COUNT(*) AS card_count FROM cards GROUP BY module"
+        ).fetchall()
+    return [dict(row) for row in rows]
+
+
+@app.get("/personas")
+def list_personas() -> list:
+    with get_connection() as conn:
+        rows = conn.execute(
+            "SELECT persona, COUNT(*) AS card_count FROM cards "
+            "GROUP BY persona ORDER BY persona"
         ).fetchall()
     return [dict(row) for row in rows]
 
