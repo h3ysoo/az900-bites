@@ -31,6 +31,8 @@ function Main() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [feedHeight, setFeedHeight] = useState(0);
+  // Bumped on shuffle so CardFeed remounts and starts from the top.
+  const [deckVersion, setDeckVersion] = useState(0);
 
   useEffect(() => {
     // The chip row follows whatever personas exist in the database, so a
@@ -67,6 +69,18 @@ function Main() {
       cancelled = true;
     };
   }, [module, persona]);
+
+  const shuffleDeck = useCallback(() => {
+    setCards((prev) => {
+      const arr = [...prev];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    });
+    setDeckVersion((v) => v + 1);
+  }, []);
 
   const onQuizAnswer = useCallback((correct: boolean) => {
     setScore((prev) => ({
@@ -152,6 +166,13 @@ function Main() {
               ✅{score.correct} ❌{score.wrong}
             </Text>
           )}
+          <Pressable
+            onPress={shuffleDeck}
+            style={styles.shuffleButton}
+            accessibilityLabel="Shuffle deck"
+          >
+            <Text style={styles.shuffleText}>🔀</Text>
+          </Pressable>
         </View>
       )}
       <View
@@ -171,6 +192,7 @@ function Main() {
           </Text>
         ) : feedHeight > 0 ? (
           <CardFeed
+            key={deckVersion}
             cards={cards}
             height={feedHeight}
             onSeen={onSeen}
@@ -242,6 +264,13 @@ const styles = StyleSheet.create({
   },
   progressText: { color: '#94a3b8', fontSize: 12, fontWeight: '600' },
   scoreText: { color: '#94a3b8', fontSize: 12, fontWeight: '600' },
+  shuffleButton: {
+    backgroundColor: '#1e293b',
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+  },
+  shuffleText: { fontSize: 14 },
   feed: { flex: 1, marginTop: 4 },
   center: { flex: 1 },
   message: {
